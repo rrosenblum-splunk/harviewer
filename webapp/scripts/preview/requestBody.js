@@ -193,12 +193,7 @@ HeadersTab.prototype = domplate(TabView.Tab.prototype,
         var url = this.file.request.url;
         if (url) {
             var anchor = $(body).find("a")[0];
-            if (url.includes("<REDACTED>")) {
-              anchor.setAttribute("href", "");
-              anchor.classList.add("disableLink")
-            } else {
-              anchor.setAttribute("href", url);
-            }
+            anchor.setAttribute("href", url);
             anchor.appendChild(document.createTextNode(Lib.cropString(url, 128)));
         }
 
